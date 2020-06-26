@@ -30,3 +30,32 @@ a {
     color: #99abb5;
   }
 }
+
+.auth-form {
+  width: 50%;
+  margin: 50px auto;
+
+  .title, .signup {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .mat-form-field, .mat-raised-button {
+      width: 100%;
+    }
+
+    .mat-raised-button {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .auth-form {
+    width: 95%;
+  }
+}

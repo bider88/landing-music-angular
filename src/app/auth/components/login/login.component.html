@@ -1,4 +1,4 @@
-<div class="login">
+<div class="auth-form">
   <div class="title">
     <h2>Inicio de sesión</h2>
   </div>
@@ -16,10 +16,13 @@
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint class="error-hint" *ngIf="isValidFormControlName('password')">Contraseña requerida</mat-hint>
       </mat-form-field>
-      <button mat-raised-button color="accent">Iniciar sesión</button>
+      <button mat-raised-button color="accent" [disabled]="loading">
+        <span>Iniciar sesión</span>
+      </button>
     </form>
     <div class="signup">
       <p>¿No tienes cuenta? Crea una cuenta <a routerLink="signup">aquí.</a></p>
     </div>
   </div>
+  <ngx-loading [show]="loading" [config]="configLoader" [template]="loadingTemplate"></ngx-loading>
 </div>

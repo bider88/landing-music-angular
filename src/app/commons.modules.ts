@@ -13,7 +13,8 @@ import {
   MatTabsModule,
   MatSelectModule,
   MatDialogModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 import { RouterModule } from '@angular/router';
@@ -32,7 +33,8 @@ const materialModules = [
   MatTabsModule,
   MatSelectModule,
   MatDialogModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatProgressSpinnerModule
 ];
 
 const commonModules = [

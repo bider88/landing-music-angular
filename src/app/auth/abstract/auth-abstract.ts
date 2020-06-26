@@ -1,8 +1,17 @@
 import { FormGroup } from '@angular/forms';
-import { OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy, TemplateRef } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
 
 export abstract class AuthAbstract implements OnInit, OnDestroy {
+
+  configLoader = {
+    animationType: ngxLoadingAnimationTypes.circleSwish,
+    primaryColour: '#ffffff',
+    secondaryColour: '#ccc',
+    backdropBorderRadius: '3px'
+  };
+  loadingTemplate: TemplateRef<any>;
   authForm: FormGroup;
   loading = false;
   subscriptions: Subscription[] = [];

@@ -21,13 +21,13 @@ export class AuthService {
   ) { }
 
   get user() {
-   return this._user;
+    return this._user;
   }
 
   initAuthListener() {
     this.auth.authState.subscribe(
       user => {
-        this.distpatchUser(user);
+        this.removeUser(user);
       }
     );
   }
@@ -88,12 +88,14 @@ export class AuthService {
     });
   }
 
-  private distpatchUser(user: any) {
+  private removeUser(user: any) {
     if (user) {
       this.getUser(user);
     } else {
       this._user = null;
-      // this.store.dispatch(authActions.unsetUser());
+      if (localStorage.getItem('user')) {
+        localStorage.remove('user');
+      }
       if (this.userSubscription) {
         this.userSubscription.unsubscribe();
       }
@@ -106,7 +108,7 @@ export class AuthService {
         const { uid, name, email } = fUser;
         const newUser: UserModel =  { uid, name, email } as UserModel;
         this._user = { ...newUser } as UserModel;
-        // this.store.dispatch(authActions.setUser({user: newUser}));
+        localStorage.setItem('user', JSON.stringify(newUser));
       }
     );
   }

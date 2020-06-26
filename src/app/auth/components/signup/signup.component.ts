@@ -1,15 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { AuthAbstract } from '../../abstract/auth-abstract';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserModel } from '../../../models/user.model'
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent extends AuthAbstract {
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    super();
+  }
 
-  ngOnInit() {
+  buildForm(): void {
+    this.authForm = this.fb.group({
+      name: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required]
+    });
+  }
+
+  authUser(): void {
+    if (this.authForm.valid) {
+      const user: UserModel = { ...this.authForm.value } as UserModel;
+      const subscription = this.authService.createUser(user).subscribe(
+        () => {
+          this.router.navigate(['/home']);
+        }, error => {
+          console.error(error);
+        }
+      );
+      this.subscriptions.push(subscription);
+    }
   }
 
 }
