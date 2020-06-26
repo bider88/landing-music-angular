@@ -5,10 +5,12 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <hr>
-      <a mat-list-item routerLink="/auth" (click)="logoutUser()">Cerrar sesión</a>
+      <div class="content">
+        <a mat-list-item href="#">Link 1</a>
+        <a mat-list-item href="#">Link 2</a>
+        <hr>
+        <a mat-list-item routerLink="/auth" (click)="logoutUser()">Cerrar sesión</a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,6 +25,8 @@
       </button>
       <span>Landing Music</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
