@@ -5,7 +5,7 @@ import { MusicRoutingModule } from './music-routing.module';
 
 import { CommonsModule } from '../commons/commons.module';
 import { RouterModule } from '@angular/router';
-import { ComponentsMaterial } from '../components.material';
+import { CommonModules } from '../commons.modules';
 
 // Components
 import { HomeComponent } from './components/home/home.component';
@@ -18,7 +18,7 @@ import { HomeComponent } from './components/home/home.component';
     CommonModule,
     MusicRoutingModule,
     CommonsModule,
-    ComponentsMaterial,
+    CommonModules,
     RouterModule
   ]
 })

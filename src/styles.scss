@@ -1,4 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  background: #303030;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  margin-top: 114px;
+}
+
+.mat-toolbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.error-hint {
+  color: #F44336;
+}
+
+a {
+  text-decoration: none;
+  color: #B0BEC5;
+
+  &:hover {
+    color: #99abb5;
+  }
+}

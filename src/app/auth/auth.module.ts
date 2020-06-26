@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-
-const componentsAuth = [
-  LoginComponent,
-  SignupComponent
-];
+import { RouterModule } from '@angular/router';
+import { CommonModules } from '../commons.modules';
+import { AuthRoutingModule } from './auth-routing.module';
+import { AuthComponent } from './components/auth.component';
 
 @NgModule({
   declarations: [
-    ...componentsAuth
-  ],
-  exports: [
-    ...componentsAuth
+    LoginComponent,
+    SignupComponent,
+    AuthComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AuthRoutingModule,
+    RouterModule,
+    CommonModules
   ]
 })
 export class AuthModule { }
