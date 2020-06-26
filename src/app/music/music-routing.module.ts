@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from '../commons/components/landing/landing.component';
 import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  {
+    path: '',
+    component: LandingComponent,
+    children: [
+      { path: '', component: HomeComponent }
+    ]
+  }
 ];
 
 @NgModule({

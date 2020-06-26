@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { ComponentsMaterial } from '../components.material';
 import { LayoutModule } from '@angular/cdk/layout';
+import { RouterModule } from '@angular/router';
 
 const componentsCommons = [
-  NavbarComponent
+  LandingComponent
 ];
 
 @NgModule({
@@ -18,7 +19,8 @@ const componentsCommons = [
   imports: [
     CommonModule,
     ComponentsMaterial,
-    LayoutModule
+    LayoutModule,
+    RouterModule
   ]
 })
 export class CommonsModule { }
