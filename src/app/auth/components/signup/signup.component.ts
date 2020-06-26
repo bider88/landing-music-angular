@@ -29,12 +29,15 @@ export class SignupComponent extends AuthAbstract {
 
   authUser(): void {
     if (this.authForm.valid) {
+      this.loading = true;
       const user: UserModel = { ...this.authForm.value } as UserModel;
       const subscription = this.authService.createUser(user).subscribe(
         () => {
           this.router.navigate(['/home']);
+          this.loading = false;
         }, error => {
           console.error(error);
+          this.loading = false;
         }
       );
       this.subscriptions.push(subscription);

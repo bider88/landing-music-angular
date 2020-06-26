@@ -20,6 +20,12 @@
   margin-top: 64px !important;
 }
 
+a {
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+
 .container {
   width: 80%;
   margin: 0 auto;

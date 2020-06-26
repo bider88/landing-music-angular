@@ -9,10 +9,12 @@ import { CommonModules } from '../commons.modules';
 
 // Components
 import { HomeComponent } from './components/home/home.component';
+import { MusicComponent } from './components/music/music.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    MusicComponent
   ],
   imports: [
     CommonModule,
