@@ -4,5 +4,6 @@ import { mapbox } from './config-mapbox';
 export const environment = {
   production: true,
   firebase,
-  mapbox
+  mapbox,
+  apiMusic: 'https://platzi-music-api.now.sh/'
 };

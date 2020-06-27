@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: () => import('./music/music.module').then( m => m.MusicModule )
   },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule ) },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

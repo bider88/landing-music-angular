@@ -1,0 +1,16 @@
+<mat-card *ngIf="trackSelected && showPlayer">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img class="s-cover" [src]="trackSelected?.image">
+    </div>
+    <mat-card-title>{{ trackSelected?.name }}</mat-card-title>
+    <mat-card-subtitle>{{ trackSelected?.artist }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <audio #player class="player-audio" controls [autoplay]="autoplay">
+      <source [src]="trackSelected?.preview">
+    </audio>
+  </mat-card-actions>
+</mat-card>

@@ -10,6 +10,7 @@ import { CommonModules } from '../commons.modules';
 // Components
 import { HomeComponent } from './components/home/home.component';
 import { MusicComponent } from './components/music/music.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MusicComponent } from './components/music/music.component';
     MusicRoutingModule,
     CommonsModule,
     CommonModules,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ]
 })
 export class MusicModule { }

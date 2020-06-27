@@ -1,1 +1,36 @@
-<p>music works!</p>
+<div class="player">
+  <mat-card>
+    <div class="search-form">
+      <form [formGroup]="musicForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Buscar artista</mat-label>
+          <input matInput type="search" placeholder="Busca un artista..." formControlName="search">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-card>
+  <mat-card class="principal-card">
+    <div class="loading" *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div class="container-tracks" *ngIf="!loading">
+      <div *ngFor="let track of tracks">
+        <mat-card *ngIf="track.preview_url" class="single-track" (click)="listenTrack(track)">
+          <div class="cover">
+            <img class="s-cover" [src]="track.album.images[0].url">
+          </div>
+          <div class="information">
+            <p>{{ track.name }}</p>
+            <small>{{ track.artists[0].name }}</small>
+          </div>
+          <p></p>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="player-music">
+  <app-player [trackSelected]="trackSelected"></app-player>
+</div>

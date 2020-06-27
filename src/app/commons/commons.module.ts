@@ -4,14 +4,16 @@ import { LandingComponent } from './components/landing/landing.component';
 import { CommonModules } from '../commons.modules';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule } from '@angular/router';
+import { PlayerComponent } from './components/player/player.component';
 
 const componentsCommons = [
-  LandingComponent
+  LandingComponent,
+  PlayerComponent
 ];
 
 @NgModule({
   declarations: [
-    ...componentsCommons
+    ...componentsCommons,
   ],
   exports: [
     ...componentsCommons
