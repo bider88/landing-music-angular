@@ -52,3 +52,10 @@
   height: 100%;
   background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+  .player-music {
+    left: 0;
+    width: 100%;
+  }
+}
