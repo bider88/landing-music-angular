@@ -33,7 +33,7 @@ export class LoginComponent extends AuthAbstract {
       const user: UserModel = { ...this.authForm.value } as UserModel;
       const subscription = this.authService.loginUser(user).subscribe(
         () => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/landing/home']);
           this.loading = false;
         }, error => {
           console.error(error);
